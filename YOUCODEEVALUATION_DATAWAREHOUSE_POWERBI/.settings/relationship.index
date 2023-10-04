@@ -13,4 +13,19 @@
     "version" : "Latest",
     "type" : "schema"
   } ]
+}, {
+  "baseItem" : {
+    "id" : "_rkn4gGHxEe6aTfei1Lqb2A",
+    "version" : "0.1",
+    "type" : "job"
+  },
+  "relatedItems" : [ {
+    "id" : "__4kr4GKLEe6vyoVgpyXACg",
+    "version" : "Latest",
+    "type" : "property"
+  }, {
+    "id" : "__4kr4GKLEe6vyoVgpyXACg - CSVStagedmetadata",
+    "version" : "Latest",
+    "type" : "schema"
+  } ]
 } ]
