@@ -1,0 +1,29 @@
+package routines;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+
+public class GenerateDate {
+
+	public static List<String> generateDateRange(int minYear, int maxYear) {
+        List<String> dateRange = new ArrayList<>();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+
+        for (int year = minYear; year <= maxYear; year++) {
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(year, Calendar.JANUARY, 1);
+            Date startDate = calendar.getTime();
+
+            calendar.set(year, Calendar.DECEMBER, 31);
+            Date endDate = calendar.getTime();
+
+            dateRange.add(dateFormat.format(startDate));
+            dateRange.add(dateFormat.format(endDate));
+        }
+
+        return dateRange;
+    }
+}

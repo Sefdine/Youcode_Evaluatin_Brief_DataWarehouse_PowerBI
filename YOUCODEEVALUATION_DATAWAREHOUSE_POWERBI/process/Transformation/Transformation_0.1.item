@@ -117,7 +117,7 @@
     <routinesParameter id="_gTNgYGHKEe6V7ryLRF7FDw" name="TalendString"/>
     <routinesParameter id="_bWEPQGLuEe6UrbwhGpWF-w" name="hashStringRoutine"/>
   </parameters>
-  <node componentName="tFileInputDelimited" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="192" posY="160">
+  <node componentName="tFileInputDelimited" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="160" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputDelimited_1"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="__4kr4GKLEe6vyoVgpyXACg"/>
@@ -250,7 +250,7 @@
     <elementParameter field="TEXT" name="LABEL" value="CSVStaged"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="CSVStagedmetadata" name="tFileInputDelimited_1">
-      <column comment="" key="false" length="10" name="Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Date" usefulColumn="true"/>
+      <column comment="" key="false" length="10" name="Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="18" name="ProductName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="15" name="ProductCategory" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="15" name="ProductSubCategory" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
@@ -274,7 +274,7 @@
       <column comment="" key="false" length="5" name="StockOnHand" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="2" type="id_Float" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" label="CSVStagedmetadata" name="REJECT">
-      <column comment="" key="false" length="10" name="Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Date" usefulColumn="true"/>
+      <column comment="" key="false" length="10" name="Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="18" name="ProductName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="15" name="ProductCategory" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="15" name="ProductSubCategory" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
@@ -338,7 +338,7 @@
       <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="TransformedData" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row1.Date " name="Date" nullable="true" type="id_Date"/>
+        <mapperTableEntries expression="TalendDate.isDate(row1.Date, &quot;yyyy-MM-dd&quot;) ? TalendDate.TO_DATE(row1.Date, &quot;yyyy-MM-dd&quot;) : TalendDate.isDate(row1.Date, &quot;dd-MM-yyyy&quot;) ? TalendDate.TO_DATE(row1.Date, &quot;dd-MM-yyyy&quot;) : TalendDate.isDate(row1.Date, &quot;MM-dd-yyyy&quot;) ? TalendDate.TO_DATE(row1.Date, &quot;dd-MM-yyyy&quot;) : TalendDate.TO_DATE(&quot;01-01-1001&quot;, &quot;dd-MM-yyyy&quot;) " name="Date" nullable="true" type="id_Date"/>
         <mapperTableEntries expression="row1.ProductName " name="ProductName" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.ProductCategory " name="ProductCategory" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.ProductSubCategory " name="ProductSubCategory" nullable="true" type="id_String"/>
@@ -358,7 +358,7 @@
         <mapperTableEntries expression="row1.StockOnHand " name="StockOnHand" nullable="true" type="id_Float"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
-        <mapperTableEntries name="Date" nullable="true" type="id_Date"/>
+        <mapperTableEntries name="Date" nullable="true" type="id_String"/>
         <mapperTableEntries name="ProductName" nullable="true" type="id_String"/>
         <mapperTableEntries name="ProductCategory" nullable="true" type="id_String"/>
         <mapperTableEntries name="ProductSubCategory" nullable="true" type="id_String"/>
@@ -420,13 +420,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_ba7fa456-549c-4722-b84f-2ab1d4305b0c"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>GdujWF3eNdUuCrfVLmbcmiiaAAP5LaaUki4uPmieNfnvCqg2qBHhcO03M/gcYO6AKBrqOHI7Ur8W&#13;
-lMy0rvepGA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_4deb8e69-ca26-444b-b483-76cda44c7fbe"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>4u1lpG6gvISwxWvUhnK2OrN+/W3Q6o/D90JP8FYaLOWx34la8esoB05gW//+DlQv71upI3m5+aNI&#13;
-2hX4dUuTfQ==</DigestValue></Reference></SignedInfo><SignatureValue>fc7/l7SV+s2ytCLRSOKVXz+/O8dHHOPOKSaQF+5nnAFUOz+ToDGGtxfqnabM74fVcaZs7p0u1NXl&#13;
-8XTmwnL2gZFW3claL/7Q1vQkRTRbgB4t7AIux+Nn8hwMEoY8plLLERd+JheYkB66e9Ty3+CL2W2h&#13;
-KQkh7RNn6RzMDgt0jLtTCPLrEY/tHj07QuQJknEkxDV+9yplTRxa+Dwni6IC1z5XNJ/od9sIqQkX&#13;
-SFEiiIJMzLfVfbArvEl9ovLEZhSKwpc1s8mqXN3HbOoF02eNIxOILSDg8EdP9VSa/IncvMux/3w2&#13;
-Dvsn81+wnhilHT2W6Hnc1JScSAimX8d+svLCxg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_b2539ceb-9ffb-4c40-ba9f-d9dcbf8d8626"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>yuv/FV09nqKnBIaxDW+FG2lSOa0PiI3yIjVx39o+qUttj/MhpW2QsPXCdG0fVSg7h7aiYD+zEDFx&#13;
+koIjzVAQBw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_3f27e9ee-636e-4603-b0e8-8628e068bb84"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>S/cmQF5eXXsV8c7X263V5ppUYIUiS9mnR/UvU3Xg2pZubNzhulBROQIBx6YwBlmB61dgeKnTlwCT&#13;
+mpsZ0oJ5Pg==</DigestValue></Reference></SignedInfo><SignatureValue>gxI8jX6ny/brOogwFTKtzV+mYHBCNWAvg1OJVWMqcOeSWAwZFai6Jo6ju/lqJDnQp6WfZAFf4hJf&#13;
+KIeHVug2Y8+z5UQ978Ly0w42WAg5/uBtiADFzF2ADGeEbAMg5DxsxAa2IFCZcyh4tYU87jFhV9Tb&#13;
+Dyrr/uldM+bwfHr6oUoMAiNMSA3P62mCQ3uZhNcOTyPCRxyTyqSkmMgHA7emclIWRvCRzKuDMSiM&#13;
+xwuASMvsUCAHeu4RuPdZPwMNF1FizVBMg5NfpLhwYvDYA549I91YMXq3zOctkzRZJRHpJWCslMZw&#13;
+WLhkZTXwnMC+zympdlJ2KN0lJPIUIwZfsC2ryw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -448,4 +448,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_4deb8e69-ca26-444b-b483-76cda44c7fbe" Target="#_ba7fa456-549c-4722-b84f-2ab1d4305b0c"><Timestamp>2023-10-05 13:24:45</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_3f27e9ee-636e-4603-b0e8-8628e068bb84" Target="#_b2539ceb-9ffb-4c40-ba9f-d9dcbf8d8626"><Timestamp>2023-10-05 18:29:35</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
