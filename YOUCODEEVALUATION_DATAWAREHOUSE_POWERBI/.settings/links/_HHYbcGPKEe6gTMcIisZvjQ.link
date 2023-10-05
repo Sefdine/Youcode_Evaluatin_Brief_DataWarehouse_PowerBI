@@ -1,0 +1,29 @@
+{
+  "itemId" : "_HHYbcGPKEe6gTMcIisZvjQ",
+  "contextList" : [ {
+    "contextName" : "Default",
+    "repoId" : "_0Ne2gGN3Ee6UrbwhGpWF-w",
+    "parameterList" : [ {
+      "id" : "_0N9XoGN3Ee6UrbwhGpWF-w",
+      "name" : "DataWarehouse_Login"
+    }, {
+      "id" : "_0N9XoWN3Ee6UrbwhGpWF-w",
+      "name" : "DataWarehouse_Server"
+    }, {
+      "id" : "_0N9XomN3Ee6UrbwhGpWF-w",
+      "name" : "DataWarehouse_AdditionalParams"
+    }, {
+      "id" : "_0N9Xo2N3Ee6UrbwhGpWF-w",
+      "name" : "DataWarehouse_Password"
+    }, {
+      "id" : "_0N9XpGN3Ee6UrbwhGpWF-w",
+      "name" : "DataWarehouse_Schema"
+    }, {
+      "id" : "_0N9XpWN3Ee6UrbwhGpWF-w",
+      "name" : "DataWarehouse_Port"
+    }, {
+      "id" : "_0N9XpmN3Ee6UrbwhGpWF-w",
+      "name" : "DataWarehouse_Database"
+    } ]
+  } ]
+}
