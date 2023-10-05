@@ -1,0 +1,40 @@
+package routines;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
+public class hashStringRoutine {
+
+	public static String hashString(String stringToHash) {
+        try {
+            // Create a MessageDigest object with the SHA-256 algorithm
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+
+            // Convert the input string to bytes
+            byte[] inputBytes = stringToHash.getBytes();
+
+            // Update the MessageDigest with the input bytes
+            md.update(inputBytes);
+
+            // Calculate the hash
+            byte[] hashBytes = md.digest();
+
+            // Convert the byte array to a hexadecimal string representation
+            StringBuilder hashStringBuilder = new StringBuilder();
+            for (byte b : hashBytes) {
+                hashStringBuilder.append(String.format("%02x", b));
+            }
+
+            return hashStringBuilder.toString();
+        } catch (NoSuchAlgorithmException e) {
+            System.err.println("SHA-256 algorithm not found.");
+            return null;
+        }
+    }
+	
+    public static void helloExample(String message) {
+        if (message == null) {
+            message = "World"; //$NON-NLS-1$
+        }
+        System.out.println("Hello " + message + " !"); //$NON-NLS-1$ //$NON-NLS-2$
+    }
+}

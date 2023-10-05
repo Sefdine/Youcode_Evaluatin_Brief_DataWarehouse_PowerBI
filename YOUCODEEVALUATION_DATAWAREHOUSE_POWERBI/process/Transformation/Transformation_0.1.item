@@ -1,5 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:xmi="http://www.omg.org/XMI" defaultContext="Default" jobType="Standard" xmi:version="2.0">
-  <context confirmationNeeded="false" name="Default"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:TalendMapper="http://www.talend.org/mapper" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" defaultContext="Default" jobType="Standard" xmi:version="2.0">
+  <context confirmationNeeded="false" hide="false" name="Default">
+    <contextParameter comment="" internalId="_jLyPEGOCEe6UrbwhGpWF-w" name="DataWarehouse_Login" prompt="DataWarehouse_Login?" promptNeeded="false" repositoryContextId="_0Ne2gGN3Ee6UrbwhGpWF-w" type="id_String" value="DataEngineer"/>
+    <contextParameter comment="" internalId="_jLy2IGOCEe6UrbwhGpWF-w" name="DataWarehouse_Server" prompt="DataWarehouse_Server?" promptNeeded="false" repositoryContextId="_0Ne2gGN3Ee6UrbwhGpWF-w" type="id_String" value="localhost"/>
+    <contextParameter comment="" internalId="_jLy2IWOCEe6UrbwhGpWF-w" name="DataWarehouse_AdditionalParams" prompt="DataWarehouse_AdditionalParams?" promptNeeded="false" repositoryContextId="_0Ne2gGN3Ee6UrbwhGpWF-w" type="id_String" value="instance=SQLEXPRESS"/>
+    <contextParameter comment="" internalId="_jLy2ImOCEe6UrbwhGpWF-w" name="DataWarehouse_Password" prompt="DataWarehouse_Password?" promptNeeded="false" repositoryContextId="_0Ne2gGN3Ee6UrbwhGpWF-w" type="id_Password" value="enc:system.encryption.key.v1:tczgoS3VTNtmFsNPX7MxkPdSPgFUzKjYj/U+PAbc5HoNWUSL8Q5Mo2+NAA=="/>
+    <contextParameter comment="" internalId="_jLy2I2OCEe6UrbwhGpWF-w" name="DataWarehouse_Schema" prompt="DataWarehouse_Schema?" promptNeeded="false" repositoryContextId="_0Ne2gGN3Ee6UrbwhGpWF-w" type="id_String" value="dbo"/>
+    <contextParameter comment="" internalId="_jLy2JGOCEe6UrbwhGpWF-w" name="DataWarehouse_Port" prompt="DataWarehouse_Port?" promptNeeded="false" repositoryContextId="_0Ne2gGN3Ee6UrbwhGpWF-w" type="id_String" value="1433"/>
+    <contextParameter comment="" internalId="_jLy2JWOCEe6UrbwhGpWF-w" name="DataWarehouse_Database" prompt="DataWarehouse_Database?" promptNeeded="false" repositoryContextId="_0Ne2gGN3Ee6UrbwhGpWF-w" type="id_String" value="EvaluationBriefEcommerce"/>
+  </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Info"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="0"/>
@@ -107,13 +115,12 @@
     <routinesParameter id="_gS9BsGHKEe6V7ryLRF7FDw" name="TalendDate"/>
     <routinesParameter id="_gTd_EGHKEe6V7ryLRF7FDw" name="TalendStringUtil"/>
     <routinesParameter id="_gTNgYGHKEe6V7ryLRF7FDw" name="TalendString"/>
+    <routinesParameter id="_bWEPQGLuEe6UrbwhGpWF-w" name="hashStringRoutine"/>
   </parameters>
   <node componentName="tFileInputDelimited" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="192" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputDelimited_1"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="__4kr4GKLEe6vyoVgpyXACg"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="__4kr4GKLEe6vyoVgpyXACg - CSVStagedmetadata"/>
     <elementParameter field="CHECK" name="USE_EXISTING_DYNAMIC" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="DYNAMIC" show="false" value=""/>
     <elementParameter field="LABEL" name="FILENAMETEXT" value="&quot;When the input source is a stream or a zip file,footer and random shouldn't be bigger than 0.&quot;"/>
@@ -293,78 +300,98 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="544" posY="160">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
-    <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
-    <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
-    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE" show="false" value="true"/>
-    <elementParameter field="RADIO" name="PRINT_LABEL" show="false" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" show="false" value="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;|&quot;"/>
-    <elementParameter field="CHECK" name="PRINT_HEADER" show="false" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" show="false" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_COLNAMES" show="false" value="false"/>
-    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" show="false" value="false"/>
-    <elementParameter field="TABLE" name="LENGTHS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="Date"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ProductName"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ProductCategory"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ProductSubCategory"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ProductPrice"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CustomerName"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CustomerEmail"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CustomerAddress"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CustomerPhone"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CustomerSegment"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="SupplierName"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="SupplierLocation"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="SupplierContact"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ShipperName"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ShippingMethod"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="QuantitySold"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="TotalAmount"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="DiscountAmount"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="NetAmount"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="StockReceived"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="StockSold"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="StockOnHand"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="416" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_1"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_rkn4gGHxEe6aTfei1Lqb2A-tMap_1-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="CSVStagedmetadata" name="tLogRow_1">
+    <metadata connector="FLOW" name="TransformedData">
       <column comment="" key="false" length="10" name="Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="18" name="ProductName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="15" name="ProductCategory" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="15" name="ProductSubCategory" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="12" name="ProductPrice" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="24" name="CustomerName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="30" name="CustomerEmail" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="64" name="CustomerAddress" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="22" name="CustomerPhone" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="6" name="CustomerSegment" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="28" name="SupplierName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="SupplierLocation" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="21" name="SupplierContact" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="8" name="ShipperName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="6" name="ShippingMethod" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="QuantitySold" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="18" name="TotalAmount" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="13" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="6" name="DiscountAmount" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="4" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="8" name="NetAmount" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="StockReceived" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="2" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="StockSold" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="StockOnHand" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="2" type="id_Float" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties shellMaximized="true"/>
+      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
+      <outputTables name="TransformedData" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="row1.Date " name="Date" nullable="true" type="id_Date"/>
+        <mapperTableEntries expression="row1.ProductName " name="ProductName" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.ProductCategory " name="ProductCategory" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.ProductSubCategory " name="ProductSubCategory" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.ProductPrice" name="ProductPrice" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.CustomerSegment " name="CustomerSegment" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.SupplierName " name="SupplierName" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.SupplierLocation " name="SupplierLocation" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.SupplierContact " name="SupplierContact" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.ShipperName " name="ShipperName" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.ShippingMethod " name="ShippingMethod" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.QuantitySold " name="QuantitySold" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="row1.TotalAmount " name="TotalAmount" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="row1.DiscountAmount " name="DiscountAmount" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="row1.NetAmount " name="NetAmount" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="row1.StockReceived " name="StockReceived" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="row1.StockSold " name="StockSold" nullable="true" type="id_Float"/>
+        <mapperTableEntries expression="row1.StockOnHand " name="StockOnHand" nullable="true" type="id_Float"/>
+      </outputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="Date" nullable="true" type="id_Date"/>
+        <mapperTableEntries name="ProductName" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ProductCategory" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ProductSubCategory" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ProductPrice" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CustomerName" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CustomerEmail" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CustomerAddress" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CustomerPhone" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CustomerSegment" nullable="true" type="id_String"/>
+        <mapperTableEntries name="SupplierName" nullable="true" type="id_String"/>
+        <mapperTableEntries name="SupplierLocation" nullable="true" type="id_String"/>
+        <mapperTableEntries name="SupplierContact" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ShipperName" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ShippingMethod" nullable="true" type="id_String"/>
+        <mapperTableEntries name="QuantitySold" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="TotalAmount" nullable="true" type="id_Float"/>
+        <mapperTableEntries name="DiscountAmount" nullable="true" type="id_Float"/>
+        <mapperTableEntries name="NetAmount" nullable="true" type="id_Float"/>
+        <mapperTableEntries name="StockReceived" nullable="true" type="id_Float"/>
+        <mapperTableEntries name="StockSold" nullable="true" type="id_Float"/>
+        <mapperTableEntries name="StockOnHand" nullable="true" type="id_Float"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node componentName="tBufferOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="672" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tBufferOutput_1"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tBufferOutput_1">
+      <column comment="" key="false" length="10" name="Date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Date" usefulColumn="true"/>
+      <column comment="" key="false" length="18" name="ProductName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="15" name="ProductCategory" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="15" name="ProductSubCategory" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="12" name="ProductPrice" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="6" name="CustomerSegment" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="28" name="SupplierName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="16" name="SupplierLocation" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
@@ -380,22 +407,26 @@
       <column comment="" key="false" length="5" name="StockOnHand" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="2" type="id_Float" usefulColumn="true"/>
     </metadata>
   </node>
-  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tFileInputDelimited_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_1" target="tLogRow_1">
+  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tFileInputDelimited_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_1" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
+  </connection>
+  <connection connectorName="FLOW" label="TransformedData" lineStyle="0" metaname="TransformedData" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tBufferOutput_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="TransformedData"/>
   </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputDelimited_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_fd74e310-bd2b-40b3-8f83-c15a5d33aba0"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>BMxGQF+bSBEZQzDz1bd2H0ULsNmLFBk5Bf7iJ8mbaljwcY4UPOHWK6FFiXYicbVJt4cvwCaWc2G+&#13;
-SgVYsyQLvA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_0d5eeca2-6ac9-4028-8a33-e3820cd205a8"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>nLviRbtnyR9L1Y0syag5tJMaFJTC9N/Ck809IBGnweO7geLMTdcyTFcsIRQqIGf0bbUolIGdo56C&#13;
-hEfcLFglHg==</DigestValue></Reference></SignedInfo><SignatureValue>o08sguraGUwFfBuCoSSGYtTfNVxcjA9kbd1I7URPRhgSA6/2ViMorrnYoubX432tNK5c1lgtOafK&#13;
-2blhr5e+uEtASDpCf7JvUfcvxBaGHIJYHP2Qe4CpciX9LZoatHpsvGBMhaZ50oI3ANqVQqTjEeTR&#13;
-lphfqdRVnz84sKCwvMnVOf+vYGNvBtGDIeFflRQd+zXJQPpbUTQMZwEu+h7/FOqACEB3VHjICiwi&#13;
-L6vc/dflXq+YOlMPlJQJvlP837YsUBC8lSlnLcPRPxcRxBR6paQkTmNspa/4wGQMs+O1lOHyPXgA&#13;
-CyCoECZC3kicPaKUeH2vfmJHylAW4sBpLbkqyA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_ba7fa456-549c-4722-b84f-2ab1d4305b0c"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>GdujWF3eNdUuCrfVLmbcmiiaAAP5LaaUki4uPmieNfnvCqg2qBHhcO03M/gcYO6AKBrqOHI7Ur8W&#13;
+lMy0rvepGA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_4deb8e69-ca26-444b-b483-76cda44c7fbe"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>4u1lpG6gvISwxWvUhnK2OrN+/W3Q6o/D90JP8FYaLOWx34la8esoB05gW//+DlQv71upI3m5+aNI&#13;
+2hX4dUuTfQ==</DigestValue></Reference></SignedInfo><SignatureValue>fc7/l7SV+s2ytCLRSOKVXz+/O8dHHOPOKSaQF+5nnAFUOz+ToDGGtxfqnabM74fVcaZs7p0u1NXl&#13;
+8XTmwnL2gZFW3claL/7Q1vQkRTRbgB4t7AIux+Nn8hwMEoY8plLLERd+JheYkB66e9Ty3+CL2W2h&#13;
+KQkh7RNn6RzMDgt0jLtTCPLrEY/tHj07QuQJknEkxDV+9yplTRxa+Dwni6IC1z5XNJ/od9sIqQkX&#13;
+SFEiiIJMzLfVfbArvEl9ovLEZhSKwpc1s8mqXN3HbOoF02eNIxOILSDg8EdP9VSa/IncvMux/3w2&#13;
+Dvsn81+wnhilHT2W6Hnc1JScSAimX8d+svLCxg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -417,4 +448,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_0d5eeca2-6ac9-4028-8a33-e3820cd205a8" Target="#_fd74e310-bd2b-40b3-8f83-c15a5d33aba0"><Timestamp>2023-10-04 13:48:14</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_4deb8e69-ca26-444b-b483-76cda44c7fbe" Target="#_ba7fa456-549c-4722-b84f-2ab1d4305b0c"><Timestamp>2023-10-05 13:24:45</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
