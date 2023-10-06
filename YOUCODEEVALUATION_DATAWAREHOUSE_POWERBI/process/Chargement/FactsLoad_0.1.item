@@ -236,7 +236,7 @@
       <column comment="" key="false" length="-1" name="ProductID" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="FactInvoices" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="Numeric.sequence(&quot;InvoiceID&quot;, 1, 1) " name="InvoiceID" type="id_Integer"/>
@@ -339,15 +339,15 @@
     <elementParameter field="TEXT" name="LABEL" value="DataWarehouse"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutputBulkExec_1">
-      <column comment="" key="true" length="-1" name="InvoiceID" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="QuantitySold" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="18" name="TotalAmount" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="13" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="6" name="DiscountAmount" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="4" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="8" name="NetAmount" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="DateID" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="CustomerID" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ProductID" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ShipperID" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="true" length="-1" name="InvoiceID" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="QuantitySold" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="18" name="TotalAmount" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="13" sourceType="REAL" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="6" name="DiscountAmount" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="4" sourceType="REAL" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="8" name="NetAmount" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="REAL" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DateID" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CustomerID" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ProductID" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ShipperID" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tMSSqlOutputBulkExec" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="672" posY="352">
@@ -384,13 +384,13 @@
     <elementParameter field="TEXT" name="LABEL" value="DataWarehouse"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutputBulkExec_2">
-      <column comment="" key="true" length="-1" name="InventoryID" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="StockReceived" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="2" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="StockSold" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="StockOnHand" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="2" type="id_Float" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="DateID" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="SupplierID" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ProductID" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="true" length="-1" name="InventoryID" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="StockReceived" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="2" sourceType="REAL" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="StockSold" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="REAL" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="StockOnHand" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="2" sourceType="REAL" type="id_Float" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DateID" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="SupplierID" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ProductID" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="192" posY="128">
@@ -685,9 +685,6 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="FactInventories"/>
   </connection>
-  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tDBOutputBulkExec_1" offsetLabelX="0" offsetLabelY="0" source="tDBOutputBulkExec_1" target="tDBCommit_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk3"/>
-  </connection>
   <connection connectorName="COMPONENT_ERROR" label="OnComponentError" lineStyle="5" metaname="tDBOutputBulkExec_1" offsetLabelX="0" offsetLabelY="0" source="tDBOutputBulkExec_1" target="tDBRollback_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentError1"/>
   </connection>
@@ -726,7 +723,7 @@
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="255;255;0"/>
   </subjob>
   <subjob>
     <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" show="false" value="true"/>
@@ -735,32 +732,33 @@
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="255;220;180"/>
   </subjob>
   <subjob>
+    <elementParameter field="CHECK" name="COLLAPSED" show="false" value="true"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBClose_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="255;255;0"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tRunJob_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="128;128;255"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBCommit_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="0;255;0"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBRollback_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="255;128;64"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_924df369-a305-404e-b1c4-834751b938a9"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>OMBC5fM6bRA8LytnPnZiDMCz7Dke8YxzBu0r6Te/aUk46p6AMiFm/bjPWt0iFHaPDaurVPApKU3S&#13;
-LMa1E/+n3A==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_30e053a5-7ee8-4d5d-a94a-7ccf78c94eb8"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>W7EG1PrUocCu/+ASB/vo3hCWMHSQZEx9CZC91ShyeOhMYmVlS7M2orLZdwuf256Izg15rXSRAbmu&#13;
-7JfrFHYGZg==</DigestValue></Reference></SignedInfo><SignatureValue>MUjk5OAJYnYjJUpLL6npO/4kmbfHeX9KDFJKJFCkmFo41HnI/RWmxQSwnD+GSvoudO10XQcspJNN&#13;
-fG3tli9YUMPGkbhv8hIMSEzaMgWHl5iYrDRhqxwbMyWr17vJzvyP9HAk5mAqXnTL022Nf8tGGfEC&#13;
-rz53X283GnHv4PukP2/mjSlPdZ7/rJ2ZlcF5BqJOg8QXg6y8w6fYPtH6Jv8U2s1ueI2uy+IQbOsp&#13;
-jAHcIkhR1eBC5ldoRadQydVUcvz0JrlXmLptbaik6ogSgFK9SwAW+XyRxOInX5oCtUkmW9NfMst/&#13;
-noAFzoLkX0W/Yp+znt92XKqIuWdhwCx0Z/vyfg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_6033ba49-3f76-42d5-bfd5-9d953e92354f"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>1mIf8wZevAuhvZkeMvBjbuiq0BbAO7wGMqUP4E506bxA652OYQ41GmE18Vx3UzBg3aOPqd9zGlvf&#13;
+fPred27XRg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_fbf7272a-bd0f-4fee-a6d6-11fbdb68c84e"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>WIwt17KvE1y4NVf5nynax4SU/0MIHTODfo3vrOV5Vmm/WOGITdMj8ww5eVy4r/xsr1Wy1/A8hKkq&#13;
+le8zsu03UQ==</DigestValue></Reference></SignedInfo><SignatureValue>WB0VpozHyo2lIzo3sf7BczHfKPANqqMW8+jHXL2VnJU5DbJA21Z/F4t1zMAOSKJx/D+/6j8yu1d/&#13;
+bQ4si9XTFmqOXLqmzEfX/fP3vf2l7P8fKkxuO6wsjZ4CzictkZuw7VFzct0zESjUr9T9nZsni1oU&#13;
+NhscpSBd1E7Qe6VvcPXTKD390Jd3yxa4bXMMadPDFHN/z+Ak/vpQ8rog0o2TPctZ2mvsTvqv5ojV&#13;
+iEyud7mUCxtjROs1uzo8Jcpb54Iv2P9/llwxlBpimSu42Qu+lo8eGLEVedeomGYZss+OlScxRpc+&#13;
+JvS0mTbx/ntPFia9VFZdSygCKtV84+ZXgduGRg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -782,4 +780,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_30e053a5-7ee8-4d5d-a94a-7ccf78c94eb8" Target="#_924df369-a305-404e-b1c4-834751b938a9"><Timestamp>2023-10-05 22:39:43</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_fbf7272a-bd0f-4fee-a6d6-11fbdb68c84e" Target="#_6033ba49-3f76-42d5-bfd5-9d953e92354f"><Timestamp>2023-10-06 08:33:28</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

@@ -147,7 +147,7 @@
     <elementParameter field="TEXT" name="LABEL" value="DataWarehouse"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tPostjob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="608">
+  <node componentName="tPostjob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="608">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPostjob_1"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
@@ -237,7 +237,7 @@
       <column comment="" key="false" length="-1" name="Date" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="DimCustomer" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row1.CustomerSegment " name="CustomerSegment" nullable="true" type="id_String"/>
@@ -323,7 +323,7 @@
       <column comment="" key="false" length="6" name="CustomerSegment" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="DimCustomers" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="Numeric.sequence(&quot;CustomerID&quot;, 1, 1) " name="CustomerID" type="id_Integer"/>
@@ -368,8 +368,8 @@
     <elementParameter field="TEXT" name="LABEL" value="DataWarehouse"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutputBulkExec_1">
-      <column comment="" key="true" length="-1" name="CustomerID" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="6" name="CustomerSegment" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="true" length="-1" name="CustomerID" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="6" name="CustomerSegment" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tUniqRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="704" posY="288">
@@ -421,7 +421,7 @@
       <column comment="" key="false" length="6" name="ShippingMethod" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="DimShippers1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="Numeric.sequence(&quot;ShipperID&quot;, 1, 1) " name="ShipperID" type="id_Integer"/>
@@ -468,9 +468,9 @@
     <elementParameter field="TEXT" name="LABEL" value="DataWarehouse"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutputBulkExec_2">
-      <column comment="" key="true" length="-1" name="ShipperID" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="8" name="ShipperName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="6" name="ShippingMethod" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="true" length="-1" name="ShipperID" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="8" name="ShipperName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="6" name="ShippingMethod" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tUniqRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="704" posY="352">
@@ -529,7 +529,7 @@
       <column comment="" key="false" length="21" name="SupplierContact" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="DimSuppliers1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="Numeric.sequence(&quot;SupplierID&quot;, 1, 1) " name="SupplierID" type="id_Integer"/>
@@ -578,10 +578,10 @@
     <elementParameter field="TEXT" name="LABEL" value="DataWarehouse"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutputBulkExec_3">
-      <column comment="" key="true" length="-1" name="SupplierID" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="28" name="SupplierName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="16" name="SupplierLocation" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="21" name="SupplierContact" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="true" length="-1" name="SupplierID" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="28" name="SupplierName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="SupplierLocation" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="21" name="SupplierContact" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tUniqRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="704" posY="416">
@@ -640,7 +640,7 @@
       <column comment="" key="false" length="15" name="ProductSubCategory" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="DimProducts1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="Numeric.sequence(&quot;ProductID&quot;, 1, 1) " name="ProductID" type="id_Integer"/>
@@ -689,10 +689,10 @@
     <elementParameter field="TEXT" name="LABEL" value="DataWarehouse"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutputBulkExec_4">
-      <column comment="" key="true" length="-1" name="ProductID" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="18" name="ProductName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="15" name="ProductCategory" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="15" name="ProductSubCategory" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_String" usefulColumn="true"/>
+      <column comment="" key="true" length="-1" name="ProductID" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="18" name="ProductName" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="15" name="ProductCategory" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="15" name="ProductSubCategory" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tUniqRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="704" posY="480">
@@ -740,7 +740,7 @@
       <column comment="" key="false" length="-1" name="Day" nullable="true" originalLength="-1" pattern="&quot;dd&quot;" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="DimDates" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="Numeric.sequence(&quot;DateID&quot;, 1, 1) " name="DateID" type="id_Integer"/>
@@ -788,11 +788,11 @@
     <elementParameter field="TEXT" name="LABEL" value="DataWarehouse"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBOutputBulkExec_5">
-      <column comment="" key="true" length="-1" name="DateID" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="20" name="Date" nullable="true" originalLength="20" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Year" nullable="true" originalLength="-1" pattern="&quot;yyyy&quot;" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Month" nullable="true" originalLength="-1" pattern="&quot;MM&quot;" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Day" nullable="true" originalLength="-1" pattern="&quot;dd&quot;" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="true" length="-1" name="DateID" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="20" name="Date" nullable="true" originalLength="20" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Year" nullable="true" originalLength="-1" pattern="&quot;yyyy&quot;" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Month" nullable="true" originalLength="-1" pattern="&quot;MM&quot;" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Day" nullable="true" originalLength="-1" pattern="&quot;dd&quot;" precision="-1" sourceType="INT" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tMSSqlCommit" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1376" posY="96">
@@ -847,9 +847,6 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="DimCustomers"/>
   </connection>
-  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tDBOutputBulkExec_1" offsetLabelX="0" offsetLabelY="0" source="tDBOutputBulkExec_1" target="tDBCommit_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk3"/>
-  </connection>
   <connection connectorName="COMPONENT_ERROR" label="OnComponentError" lineStyle="5" metaname="tDBOutputBulkExec_1" offsetLabelX="0" offsetLabelY="0" source="tDBOutputBulkExec_1" target="tDBRollback_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentError1"/>
   </connection>
@@ -860,9 +857,6 @@
   <connection connectorName="FLOW" label="DimShippers1" lineStyle="0" metaname="DimShippers1" offsetLabelX="0" offsetLabelY="0" source="tMap_3" target="tDBOutputBulkExec_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="DimShippers1"/>
-  </connection>
-  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tDBOutputBulkExec_2" offsetLabelX="0" offsetLabelY="0" source="tDBOutputBulkExec_2" target="tDBCommit_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk4"/>
   </connection>
   <connection connectorName="COMPONENT_ERROR" label="OnComponentError" lineStyle="5" metaname="tDBOutputBulkExec_2" offsetLabelX="0" offsetLabelY="0" source="tDBOutputBulkExec_2" target="tDBRollback_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentError2"/>
@@ -875,9 +869,6 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="DimSuppliers1"/>
   </connection>
-  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tDBOutputBulkExec_3" offsetLabelX="0" offsetLabelY="0" source="tDBOutputBulkExec_3" target="tDBCommit_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk5"/>
-  </connection>
   <connection connectorName="COMPONENT_ERROR" label="OnComponentError" lineStyle="5" metaname="tDBOutputBulkExec_3" offsetLabelX="0" offsetLabelY="0" source="tDBOutputBulkExec_3" target="tDBRollback_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentError3"/>
   </connection>
@@ -888,9 +879,6 @@
   <connection connectorName="FLOW" label="DimProducts1" lineStyle="0" metaname="DimProducts1" offsetLabelX="0" offsetLabelY="0" source="tMap_5" target="tDBOutputBulkExec_4">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="DimProducts1"/>
-  </connection>
-  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tDBOutputBulkExec_4" offsetLabelX="0" offsetLabelY="0" source="tDBOutputBulkExec_4" target="tDBCommit_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk6"/>
   </connection>
   <connection connectorName="COMPONENT_ERROR" label="OnComponentError" lineStyle="5" metaname="tDBOutputBulkExec_4" offsetLabelX="0" offsetLabelY="0" source="tDBOutputBulkExec_4" target="tDBRollback_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentError4"/>
@@ -918,7 +906,7 @@
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="255;255;0"/>
   </subjob>
   <subjob>
     <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" show="false" value="true"/>
@@ -929,30 +917,30 @@
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBClose_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="255;255;0"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tRunJob_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="128;128;255"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBCommit_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="0;255;0"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBRollback_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="255;128;0"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_20c73717-ad99-445d-97d8-6cb0ef5381f9"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>jFcZBwd+KyVoG0lfoofg3ovNZ4zt3AUdQI9lE+hS2QD+JzXrzvC09uwCvQwC39Q6BM2UyHSEkZP3&#13;
-N7tisSGp6w==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_2b0939be-71f4-4fb6-9bf2-ae1cdf494e61"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Yc3bVt9XmbRy/SptnhffboFI1S2rFiyaKnc6jhOix7TzF6N5ocM8VFMT9JfBCfRo8EVkr5gNkr4o&#13;
-vjA2/RAlwA==</DigestValue></Reference></SignedInfo><SignatureValue>kKaNOjpdnRiHRu1PaIMqwyDIKdcOaBKCa0UTjKWfporwYCkU1QBLb9/2dUyMLqAoxngQaetHzGFw&#13;
-KqzNI1cJP25OhCl4IrgVF+TTafgTTCiKcfCv2wvw7zNR+LLrlS3gzSm+mVyVZ3Qdr9wKbNmKWqzR&#13;
-RfVweN1oyNq/wKAeCnZ9z99EgfpK0JY9Sdv8DJrP3iR9ViiGobK9T1EfZKP6TFkTJNiXVP3hoGox&#13;
-GZjo9Nfxum7lnx+QmALaKieBq7DSQ39rDYyIcVVR9m2XeTm7BMPZfO5MQTDZpV76jLGiIeb4EA35&#13;
-jUUMO35NWp1FSSdSLccZqMuf71jt5OUUVgg9Aw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_fb6492bb-ea49-4497-9b42-c31904a680ff"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>0BF8D6kYUWkvHK9iC9DIzjQsmsgWx01DWoaUDqlllninPfWLKgGVnwNrxhNRBIfwU1V2T7lVNoCd&#13;
+yajrbD8vIw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_19e1ce5a-9779-4a7e-988e-8d7c3e4ed1cb"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>S+SXW38xRYbbTaLDgB0FTG7mniUcdBf/RwHSQNOLLylu92BHHYeZRPwCjrlzuZPZGPpEAHmIyhHf&#13;
+JC42NHFbkw==</DigestValue></Reference></SignedInfo><SignatureValue>CLji7L/V1bGecsAtk19EATqPmlUT8ZXY5H+02y0MVfirsbC2YZ/6kL6f38g58is8Xvci1xyEo79E&#13;
+iJCdp+fUsP9c32h65C65UuMsv+3VKOUDsoaOvyQ9UoK21pdrKP7IzxBMV3ugU/6ElcWrGLyOgQbI&#13;
+wn+uxhWleACRsTniqitZiN8ZDfw6ywxsquDMsh6hU9dIOXa0yjvn4yOO4aRAnbudlWVGixy6f6IC&#13;
+PDt9KS0bwonkYEAG4j/ZOnLJLFk3EWDsXhvBfi0dkx8XgqemrAkG0r3x1KRtHD3GRDar+fTTvJTp&#13;
+F3CeSNo1w2zLeB+FPVgNbO2hHa/ps4v7KPvkkw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -974,4 +962,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_2b0939be-71f4-4fb6-9bf2-ae1cdf494e61" Target="#_20c73717-ad99-445d-97d8-6cb0ef5381f9"><Timestamp>2023-10-05 21:38:22</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_19e1ce5a-9779-4a7e-988e-8d7c3e4ed1cb" Target="#_fb6492bb-ea49-4497-9b42-c31904a680ff"><Timestamp>2023-10-06 08:35:07</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
