@@ -25,5 +25,30 @@
       "id" : "_0N9XpmN3Ee6UrbwhGpWF-w",
       "name" : "DataWarehouse_Database"
     } ]
+  }, {
+    "contextName" : "Default",
+    "repoId" : "_V2XRkGQ8Ee6MNOAg0VQCFA",
+    "parameterList" : [ {
+      "id" : "_V3GRYGQ8Ee6MNOAg0VQCFA",
+      "name" : "DataMartIvoices_Server"
+    }, {
+      "id" : "_V3G4c2Q8Ee6MNOAg0VQCFA",
+      "name" : "DataMartIvoices_Database"
+    }, {
+      "id" : "_V3GRYWQ8Ee6MNOAg0VQCFA",
+      "name" : "DataMartIvoices_Login"
+    }, {
+      "id" : "_V3G4cGQ8Ee6MNOAg0VQCFA",
+      "name" : "DataMartIvoices_Password"
+    }, {
+      "id" : "_V3GRYmQ8Ee6MNOAg0VQCFA",
+      "name" : "DataMartIvoices_Port"
+    }, {
+      "id" : "_V3G4cWQ8Ee6MNOAg0VQCFA",
+      "name" : "DataMartIvoices_AdditionalParams"
+    }, {
+      "id" : "_V3G4cmQ8Ee6MNOAg0VQCFA",
+      "name" : "DataMartIvoices_Schema"
+    } ]
   } ]
 }
