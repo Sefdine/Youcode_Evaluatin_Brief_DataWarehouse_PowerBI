@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ContextType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:xmi="http://www.omg.org/XMI" confirmationNeeded="false" hide="false" name="Default" xmi:id="_e1BZMGQ9Ee6MNOAg0VQCFA" xmi:version="2.0">
+  <contextParameter comment="" name="DataMartInventories_Server" prompt="DataMartInventories_Server?" promptNeeded="false" repositoryContextId="" type="id_String" value="localhost" xmi:id="_e1BZMWQ9Ee6MNOAg0VQCFA"/>
+  <contextParameter comment="" name="DataMartInventories_Login" prompt="DataMartInventories_Login?" promptNeeded="false" repositoryContextId="" type="id_String" value="DataEngineer" xmi:id="_e1BZMmQ9Ee6MNOAg0VQCFA"/>
+  <contextParameter comment="" name="DataMartInventories_Port" prompt="DataMartInventories_Port?" promptNeeded="false" repositoryContextId="" type="id_String" value="1433" xmi:id="_e1BZM2Q9Ee6MNOAg0VQCFA"/>
+  <contextParameter comment="" name="DataMartInventories_Password" prompt="DataMartInventories_Password?" promptNeeded="false" repositoryContextId="" type="id_Password" value="enc:system.encryption.key.v1:aBJPEtY/s8/QuAGqEKQZaPjXGoyINIfCWMWgVqyCJmT2kFRCC3qOFYT9iA==" xmi:id="_e1BZNGQ9Ee6MNOAg0VQCFA"/>
+  <contextParameter comment="" name="DataMartInventories_AdditionalParams" prompt="DataMartInventories_AdditionalParams?" promptNeeded="false" repositoryContextId="" type="id_String" value="instance=SQLEXPRESS" xmi:id="_e1BZNWQ9Ee6MNOAg0VQCFA"/>
+  <contextParameter comment="" name="DataMartInventories_Schema" prompt="DataMartInventories_Schema?" promptNeeded="false" repositoryContextId="" type="id_String" value="dbo" xmi:id="_e1BZNmQ9Ee6MNOAg0VQCFA"/>
+  <contextParameter comment="" name="DataMartInventories_Database" prompt="DataMartInventories_Database?" promptNeeded="false" repositoryContextId="" type="id_String" value="EvaluationBriefDataMartInventories" xmi:id="_e1BZN2Q9Ee6MNOAg0VQCFA"/>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_6601b32e-d4c2-4702-b27d-dc44832899cd"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>p+ONxu4j2OGeKPDFSGGW4GgI1WbIclCDc2gOdLGzHAZsdi17dOs7GLbpboVR+RtzwdrF9yZAmkKd&#13;
+cjeyL2PWpQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_5e38969e-7b92-421d-b993-271df1cd7015"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>hnojeq6isYvsV3uLp4xc5v/9cPbJun82JJ5OTSGdhRDT3B2phtntgl89H7nQnNAT+pl/JU2ySWaR&#13;
+givKcnLJJw==</DigestValue></Reference></SignedInfo><SignatureValue>BKlgHMzRkkIRVDamEkMzvOi4z4nCNMChYTjiJL1uYFRHEDDpBvrkDhOYSJl0txGnNjEipvBBbF53&#13;
+HUkGcuc64nqo7vcOA1LA9Ebxh56j8olNFD3evt6G0hFpPeUOA3QHuDanzPEuBUViXXMyMGLY1ros&#13;
+ndsiyQDw/cLpEE7I15LIN7i8Fe1a0ePsuS5uIvm2zvlZ4yjzItpoAzepMidNMw//Telu7tiLsf2J&#13;
+D0TrCWiT9tNoDIfyv4H31j80p7eJLc/Dn8iZT8Msx7UyH8NHsKQR+Od4F3hWIbRY1+t3mz52ydG5&#13;
+rMkK78MLSiIAsb45JNajHV3OTrux7CeKqm1MIw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
+VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
+QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
+YWxlbmQgQ29kZSBTaWduaW5nIGNlcnRpZmljYXRlMQwwCgYDVQQLDANSJkQxFDASBgNVBAoTC1Rh&#13;
+bGVuZCBJbmMuMQ4wDAYDVQQHEwVQYXJpczEOMAwGA1UECBMFUGFyaXMxCzAJBgNVBAYTAkZSMIIB&#13;
+IjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp5TMF8BmRt8dY51t9kIDdDkoOKVVytJN2gn2&#13;
+DhMGi8hzpUofNDykJDhe9SPqyJdGZ6o/h7laTA0/CivKyPT1OJQ9E2gMHKs8cTZM/cO2w0Atlqkl&#13;
+alIxepol0DNnUtmECVBqdnVsJesfmdoeptxgJAtxYbquFsTsrATNY2cscXpwmOca/Ewip48WQLFx&#13;
+e5s067jaIsAQGRIqpIup3bOtWBySrtImJ40lQCPeEcl96qzkv3utaVaNc3ukkhYkCDbMbK8NVd1B&#13;
+CVeeIBAe+n/SdpHH20o+6eIiZecsBGDLwlTYrFvuVqAa6xI7y8Vdz6irjPAVBEtG/iOc782aJ/lZ&#13;
+TwIDAQABo3UwczAMBgNVHRMBAf8EAjAAMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEF&#13;
+BQcDAzAdBgNVHQ4EFgQUGdfzQEbjQnANq28sfhEMTx+rsOcwHwYDVR0jBBgwFoAU530Lcvy1gZnG&#13;
+gCvZLOyCczK1qPcwDQYJKoZIhvcNAQELBQADggIBAEr22wnaQwZm2dhbUCqD+qZpTq2AF/tzxqAM&#13;
+eL/CiTjPbTblS4SNNwCKvTgMe9ucpUbenXmK7xE+DU9dN4om+t3VHbkOLQVyuLcd2WGsy7ZGwRvA&#13;
+f+TFwLbwjyTukOGm6Sd1qyZgvCPzBsKnft6vscvGy2yEpmFCeHJyBP8pvchg607zguRdNbkGYZXw&#13;
+G6jNipAbTtzdPTFKKr1bEf0sUGqMrlZIMPjflh2Vewu8ImNdX5IZdvBD6DdFVOC5wqV6u+W9ukE/&#13;
+mXZxDBYNl2AF7FTh04ucEVN3mHv7m2L0uFvUlhxchcagJhJsdQG+A0LVCemHbp6CSNQJx02KxqUG&#13;
+hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13;
+WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
+gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
+qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_5e38969e-7b92-421d-b993-271df1cd7015" Target="#_6601b32e-d4c2-4702-b27d-dc44832899cd"><Timestamp>2023-10-06 11:42:52</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ContextType>

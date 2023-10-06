@@ -1,0 +1,29 @@
+{
+  "itemId" : "_K7x94GQ9Ee6MNOAg0VQCFA",
+  "contextList" : [ {
+    "contextName" : "Default",
+    "repoId" : "_e0vFUGQ9Ee6MNOAg0VQCFA",
+    "parameterList" : [ {
+      "id" : "_e1BZMWQ9Ee6MNOAg0VQCFA",
+      "name" : "DataMartInventories_Server"
+    }, {
+      "id" : "_e1BZMmQ9Ee6MNOAg0VQCFA",
+      "name" : "DataMartInventories_Login"
+    }, {
+      "id" : "_e1BZM2Q9Ee6MNOAg0VQCFA",
+      "name" : "DataMartInventories_Port"
+    }, {
+      "id" : "_e1BZNGQ9Ee6MNOAg0VQCFA",
+      "name" : "DataMartInventories_Password"
+    }, {
+      "id" : "_e1BZNWQ9Ee6MNOAg0VQCFA",
+      "name" : "DataMartInventories_AdditionalParams"
+    }, {
+      "id" : "_e1BZNmQ9Ee6MNOAg0VQCFA",
+      "name" : "DataMartInventories_Schema"
+    }, {
+      "id" : "_e1BZN2Q9Ee6MNOAg0VQCFA",
+      "name" : "DataMartInventories_Database"
+    } ]
+  } ]
+}
