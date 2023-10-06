@@ -1,0 +1,79 @@
+{
+  "itemId" : "_BBV4kGQ-Ee6MNOAg0VQCFA",
+  "contextList" : [ {
+    "contextName" : "Default",
+    "repoId" : "_0Ne2gGN3Ee6UrbwhGpWF-w",
+    "parameterList" : [ {
+      "id" : "_0N9XoGN3Ee6UrbwhGpWF-w",
+      "name" : "DataWarehouse_Login"
+    }, {
+      "id" : "_0N9XoWN3Ee6UrbwhGpWF-w",
+      "name" : "DataWarehouse_Server"
+    }, {
+      "id" : "_0N9XomN3Ee6UrbwhGpWF-w",
+      "name" : "DataWarehouse_AdditionalParams"
+    }, {
+      "id" : "_0N9Xo2N3Ee6UrbwhGpWF-w",
+      "name" : "DataWarehouse_Password"
+    }, {
+      "id" : "_0N9XpGN3Ee6UrbwhGpWF-w",
+      "name" : "DataWarehouse_Schema"
+    }, {
+      "id" : "_0N9XpWN3Ee6UrbwhGpWF-w",
+      "name" : "DataWarehouse_Port"
+    }, {
+      "id" : "_0N9XpmN3Ee6UrbwhGpWF-w",
+      "name" : "DataWarehouse_Database"
+    } ]
+  }, {
+    "contextName" : "Default",
+    "repoId" : "_V2XRkGQ8Ee6MNOAg0VQCFA",
+    "parameterList" : [ {
+      "id" : "_V3GRYGQ8Ee6MNOAg0VQCFA",
+      "name" : "DataMartIvoices_Server"
+    }, {
+      "id" : "_V3G4c2Q8Ee6MNOAg0VQCFA",
+      "name" : "DataMartIvoices_Database"
+    }, {
+      "id" : "_V3GRYWQ8Ee6MNOAg0VQCFA",
+      "name" : "DataMartIvoices_Login"
+    }, {
+      "id" : "_V3G4cGQ8Ee6MNOAg0VQCFA",
+      "name" : "DataMartIvoices_Password"
+    }, {
+      "id" : "_V3GRYmQ8Ee6MNOAg0VQCFA",
+      "name" : "DataMartIvoices_Port"
+    }, {
+      "id" : "_V3G4cWQ8Ee6MNOAg0VQCFA",
+      "name" : "DataMartIvoices_AdditionalParams"
+    }, {
+      "id" : "_V3G4cmQ8Ee6MNOAg0VQCFA",
+      "name" : "DataMartIvoices_Schema"
+    } ]
+  }, {
+    "contextName" : "Default",
+    "repoId" : "_e0vFUGQ9Ee6MNOAg0VQCFA",
+    "parameterList" : [ {
+      "id" : "_e1BZNWQ9Ee6MNOAg0VQCFA",
+      "name" : "DataMartInventories_AdditionalParams"
+    }, {
+      "id" : "_e1BZNmQ9Ee6MNOAg0VQCFA",
+      "name" : "DataMartInventories_Schema"
+    }, {
+      "id" : "_e1BZM2Q9Ee6MNOAg0VQCFA",
+      "name" : "DataMartInventories_Port"
+    }, {
+      "id" : "_e1BZMmQ9Ee6MNOAg0VQCFA",
+      "name" : "DataMartInventories_Login"
+    }, {
+      "id" : "_e1BZN2Q9Ee6MNOAg0VQCFA",
+      "name" : "DataMartInventories_Database"
+    }, {
+      "id" : "_e1BZNGQ9Ee6MNOAg0VQCFA",
+      "name" : "DataMartInventories_Password"
+    }, {
+      "id" : "_e1BZMWQ9Ee6MNOAg0VQCFA",
+      "name" : "DataMartInventories_Server"
+    } ]
+  } ]
+}
