@@ -470,6 +470,8 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ProductSubCategory"/>
       <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ProductPrice"/>
+      <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="CHECK" name="SET_QUERY_TIMEOUT" value="false"/>
     <elementParameter field="TEXT" name="QUERY_TIMEOUT_IN_SECONDS" show="false" value="30"/>
@@ -480,6 +482,7 @@
       <column comment="" key="false" length="18" name="ProductName" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="15" name="ProductCategory" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="15" name="ProductSubCategory" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="7" name="ProductPrice" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="REAL" type="id_Float" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tMSSqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="512" posY="320">
@@ -497,7 +500,7 @@
     <elementParameter field="TEXT" name="USER" show="false" value="context.DataMartIvoices_Login"/>
     <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:Hjl+PzdotJcQI5xmZWzdQViJ0mK4uZdqBf29pbJq2w7jkBf1YktGGRKgyBn/H2kTqsvM6Ftz6xVmUWT6"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;DimProducts&quot;"/>
-    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CREATE_IF_NOT_EXISTS"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
     <elementParameter field="CHECK" name="IDENTITY_INSERT" value="false"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT_OR_UPDATE"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="NOTE: batch size must be less than or equal to total number of parameter markers divided by number of columns"/>
@@ -540,6 +543,11 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ProductPrice"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
     </elementParameter>
     <elementParameter field="CHECK" name="IGNORE_DATE_OUTOF_RANGE" value="false"/>
     <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
@@ -555,12 +563,14 @@
       <column comment="" key="false" length="18" name="ProductName" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="15" name="ProductCategory" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="15" name="ProductSubCategory" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="7" name="ProductPrice" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="REAL" type="id_Float" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
       <column comment="" defaultValue="" key="true" length="10" name="ProductID" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="18" name="ProductName" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="15" name="ProductCategory" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="15" name="ProductSubCategory" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="7" name="ProductPrice" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="REAL" type="id_Float" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -832,7 +842,7 @@
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;&#13;&#10;ALTER TABLE FactInvoices ADD CONSTRAINT FK_FInvoices_DCustomers &#13;&#10;FOREIGN KEY (CustomerID) REFERENCES DimCustomers(CustomerID) ON DELETE CASCADE ON UPDATE CASCADE;&#13;&#10;&#13;&#10;ALTER TABLE FactInvoices ADD CONSTRAINT FK_FInvoices_DShippers&#13;&#10;FOREIGN KEY (ShipperID) REFERENCES DimShippers(ShipperID) ON DELETE CASCADE ON UPDATE CASCADE;&#13;&#10;&#13;&#10;ALTER TABLE FactInvoices ADD CONSTRAINT FK_FInvoices_DDates&#13;&#10;FOREIGN KEY (DateID) REFERENCES DimDates(DateID) ON DELETE CASCADE ON UPDATE CASCADE;&#13;&#10;&#13;&#10;ALTER TABLE FactInvoices ADD CONSTRAINT FK_FInvoices_DProducts&#13;&#10;FOREIGN KEY (ProductID) REFERENCES DimProducts(ProductID) ON DELETE CASCADE ON UPDATE CASCADE;&#13;&#10;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;&#13;&#10;ALTER TABLE FactInvoices ADD CONSTRAINT FK_FInvoices_DCustomers &#13;&#10;FOREIGN KEY (CustomerID) REFERENCES DimCustomers(CustomerID) ON DELETE CASCADE ON UPDATE CASCADE;&#13;&#10;&#13;&#10;ALTER TABLE FactInvoices ADD CONSTRAINT FK_FInvoices_DShippers&#13;&#10;FOREIGN KEY (ShipperID) REFERENCES DimShippers(ShipperID) ON DELETE CASCADE ON UPDATE CASCADE;&#13;&#10;&#13;&#10;ALTER TABLE FactInvoices ADD CONSTRAINT FK_FInvoices_DDates&#13;&#10;FOREIGN KEY (DateID) REFERENCES DimDates(DateID) ON DELETE CASCADE ON UPDATE CASCADE;&#13;&#10;&#13;&#10;ALTER TABLE FactInvoices ADD CONSTRAINT FK_FInvoices_DProducts&#13;&#10;FOREIGN KEY (ProductID) REFERENCES DimProducts(ProductID) ON DELETE CASCADE ON UPDATE CASCADE;&#13;&#10;&#13;&#10;CREATE NONCLUSTERED INDEX IX_DimDates_Date ON DimDates(Date);&#13;&#10;&#13;&#10;CREATE NONCLUSTERED INDEX IX_DimDates_Year_Month_Day ON DimDates(Year, Month, Day);&#13;&#10;&quot;"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -848,6 +858,7 @@
     <elementParameter field="TEXT" name="COMMIT_EVERY" show="false" value="10000"/>
     <elementParameter field="CHECK" name="SET_QUERY_TIMEOUT" value="false"/>
     <elementParameter field="TEXT" name="QUERY_TIMEOUT_IN_SECONDS" show="false" value="30"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBRow_1"/>
     <metadata connector="REJECT" name="REJECT">
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
@@ -900,6 +911,9 @@
   </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tDBRow_1" offsetLabelX="0" offsetLabelY="0" source="tDBRow_1" target="tDBCommit_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk4"/>
+  </connection>
+  <connection connectorName="COMPONENT_ERROR" label="OnComponentError" lineStyle="5" metaname="tDBRow_1" offsetLabelX="0" offsetLabelY="0" source="tDBRow_1" target="tDBRollback_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentError6"/>
   </connection>
   <subjob>
     <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" show="false" value="true"/>
@@ -957,13 +971,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="128;0;128"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_703f0a14-0690-47c7-ad87-13bd81150c5d"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>HLPYEyqzOKzdC741TqsAk06n8XSzd/j/BZUjLlNSINBkMQK69Pz2gAjautOoGqXhOd1OTgjQIpBe&#13;
-PYkUfrfLZA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_208e39f2-6317-4d31-a428-8d33ff4a10aa"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>wMcHZrqtWOGrcHgriHUUFRLqZzEzv7YIat9Qnx8nkECdzo3TrCyjb3syIW8+tX1k+lLTJfZ4hBJd&#13;
-bOpvLVQE2A==</DigestValue></Reference></SignedInfo><SignatureValue>XsihlKOWa5wU6k8uzHfoCwjwy1euE/+bnhzvLe7GiZmnCSjia3v+870+R3trpldSwq5lwad1QgC6&#13;
-FxdYZgJxa7TfXK0ItlOzJqLfTKrS/RUvl804a8BzAxo0uilQH0E3wxuW47qc1PIFS84GZTQ9+cIt&#13;
-FoELQEk2VUdrca8WtBsT49I/h1f8uB2hESeEI2a5FfkXBg27fAhEZ83Elog3cXTGyyRS97SN1FQ4&#13;
-Hj4/Isg3MoML8LLf2PFPsXuNSIWQzNDv+FSfuR9RsANGNboibNZhm00FcD0oP/Bp9vOdNU/np9G0&#13;
-0rFihB7JIuaNpXO+DIXgqMkgGb0TA8/TaRL8zQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_78540319-5d0d-455e-91e8-f76a493aaca1"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>9yw3Tm58vF69oIfuaVvvXJ2sqBGMPCJzZwaVI4JFa+FC85GDqyZR6UgApd6aQwF5eBfBg5Y6ph3b&#13;
+6v6tbZZOHQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_44b6e8c9-dcb0-4771-bad2-b483096f136c"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>IBDFa0zvSmBLOTmbf1tWWderVP+aNKTAEP8/r2sWDZs3xNtIuk6E+ACW9Ish7znjrt2DvMRANaSK&#13;
+iYkd57yEtg==</DigestValue></Reference></SignedInfo><SignatureValue>mSgYy62blPbDEZoV8D1fCKVRmdYgUBn5Zumi1EvpbQNeAXydguHWuz+dk6bh3vuQ2txwYwhLZ8Hw&#13;
+pHeVsS/pPdwIvwS7iBXhCPtx2P84oZxrT2tI3G2OB6/f6uWEiBNHyeSck2mazOLPWuZV/9euB7Em&#13;
+kW2HXEGIvux58NR/E6w2xt0q5+r3lDYu0DH3gEW1zWMQ5uRHChOVgBjzsTT0D/WDOpG4urmkPhEo&#13;
+QQb+zkisYmt/NVvDdgv1456Aizz6gUW0kAioro4k0fcxPbQv5PTvlYgSdk09AN5iLFuqpusVD4GG&#13;
+u2cRHvG7tEKhZBLNDVgSf+DCL2c/XHxB7enc4w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -985,4 +999,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_208e39f2-6317-4d31-a428-8d33ff4a10aa" Target="#_703f0a14-0690-47c7-ad87-13bd81150c5d"><Timestamp>2023-10-06 13:13:38</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_44b6e8c9-dcb0-4771-bad2-b483096f136c" Target="#_78540319-5d0d-455e-91e8-f76a493aaca1"><Timestamp>2023-10-08 14:15:12</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
