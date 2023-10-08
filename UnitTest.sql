@@ -1,8 +1,7 @@
 
 EXEC tSQLt.NewTestClass 'DataIntegrity';
 GO
-
-ALTER PROCEDURE DataIntegrity.[test FactInvoices]
+CREATE PROCEDURE DataIntegrity.[test FactInvoices]
 AS
 BEGIN
 	DECLARE @actualcount INT; 
@@ -12,5 +11,5 @@ BEGIN
 	EXEC tSQLt.AssertEquals @actualcount, @exceptedcount;
 END;
 GO
-
 EXEC tSQLt.Run DataIntegrity
+
